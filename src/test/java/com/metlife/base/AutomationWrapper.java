@@ -7,6 +7,9 @@ import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
+/**
+ * Browser Configurations
+ */
 public class AutomationWrapper {
    protected WebDriver driver;
 
