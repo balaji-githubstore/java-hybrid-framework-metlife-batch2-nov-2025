@@ -15,7 +15,7 @@ import java.time.Duration;
 
 public class LoginTest extends AutomationWrapper {
 
-    @Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
+    @Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider",groups = {"regression","smoke"})
     public void validLoginTest(String username, String password,String expectedValue)
     {
         driver.findElement(By.name("username")).sendKeys(username);
@@ -27,7 +27,7 @@ public class LoginTest extends AutomationWrapper {
         Assert.assertEquals(actualValue,expectedValue);
     }
 
-    @Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
+    @Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider",groups = {"regression"})
     public void invalidLoginTest(String username, String password,String expectedError)
     {
         driver.findElement(By.name("username")).sendKeys(username);

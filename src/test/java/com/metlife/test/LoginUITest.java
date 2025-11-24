@@ -13,14 +13,14 @@ import java.time.Duration;
 
 public class LoginUITest extends AutomationWrapper {
 
-    @Test
+    @Test(groups = {"regression","smoke"})
     public void titleTest()
     {
         String actualTitle= this.driver.getTitle();
         Assert.assertEquals(actualTitle,"OrangeHRM");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void headerTest()
     {
        String actualHeader= driver.findElement(By.xpath("//h5[text()='Login']")).getText();

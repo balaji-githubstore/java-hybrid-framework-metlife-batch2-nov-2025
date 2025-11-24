@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OrangeHRM Suite" parallel="tests" thread-count="2">
+
+    <parameter name="browser" value="ch"></parameter>
+    <test verbose="2" preserve-order="true" name="Login UI Test Chrome">
+        <classes>
+            <class name="com.metlife.test.LoginUITest">
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Login UI Test Edge">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="com.metlife.test.LoginUITest">
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Login UI Test Edge2">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="com.metlife.test.LoginUITest">
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Login UI Test Edge3">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="com.metlife.test.LoginUITest">
+            </class>
+        </classes>
+    </test>
+
+</suite>
