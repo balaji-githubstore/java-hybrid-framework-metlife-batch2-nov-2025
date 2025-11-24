@@ -24,7 +24,6 @@ public class DataUtils {
         return arr;
     }
 
-
     @DataProvider
     public Object[][] commonDataProvider(Method mtd) throws IOException {
         //dynamically if we get @Test name - that can be passed as sheet name
