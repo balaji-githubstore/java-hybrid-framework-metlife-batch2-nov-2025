@@ -3,6 +3,7 @@ package com.metlife.utilities;
 import org.testng.annotations.DataProvider;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 /**
  * This class contains all the dataproviders
@@ -25,9 +26,9 @@ public class DataUtils {
 
 
     @DataProvider
-    public Object[][] commonDataProvider() throws IOException {
+    public Object[][] commonDataProvider(Method mtd) throws IOException {
         //dynamically if we get @Test name - that can be passed as sheet name
-        String sheetName="invalidLoginTest";
+        String sheetName=mtd.getName();
         Object[][] arr= ExcelUtils.getSheetIntoTwoDimensionalArray("test-data/orange-data.xlsx",sheetName);
         return arr;
     }

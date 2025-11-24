@@ -15,16 +15,16 @@ import java.time.Duration;
 
 public class LoginTest extends AutomationWrapper {
 
-    @Test
-    public void validLoginTest()
+    @Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
+    public void validLoginTest(String username, String password,String expectedValue)
     {
-        driver.findElement(By.name("username")).sendKeys("Admin");
-        driver.findElement(By.name("password")).sendKeys("admin123");
+        driver.findElement(By.name("username")).sendKeys(username);
+        driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.xpath("//button[contains(normalize-space(),'Log')]")).click();
 
         //Assert the Quick Launch text
         String actualValue= driver.findElement(By.xpath("//p[contains(normalize-space(),'Quick')]")).getText();
-        Assert.assertEquals(actualValue,"Quick Launch");
+        Assert.assertEquals(actualValue,expectedValue);
     }
 
     @Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
