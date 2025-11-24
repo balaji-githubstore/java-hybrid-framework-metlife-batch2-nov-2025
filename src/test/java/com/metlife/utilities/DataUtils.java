@@ -23,9 +23,13 @@ public class DataUtils {
         return arr;
     }
 
+
     @DataProvider
     public Object[][] commonDataProvider() throws IOException {
-        Object[][] arr= ExcelUtils.getSheetIntoTwoDimensionalArray("","");
+        //dynamically if we get @Test name - that can be passed as sheet name
+        String sheetName="invalidLoginTest";
+        Object[][] arr= ExcelUtils.getSheetIntoTwoDimensionalArray("test-data/orange-data.xlsx",sheetName);
         return arr;
     }
+
 }
