@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 
 /**
- * This class contains all the dataproviders
+ * This class contains all the dataprovider
  */
 public class DataUtils {
 
